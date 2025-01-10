@@ -1,0 +1,21 @@
+@model Experience
+
+<div class="card mb-4 entrepreneurship-card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.Company</h6>
+        <p class="card-text text-muted">@Model.Duration</p>
+        <p class="card-text">@Model.Responsibilities[0]</p>
+        <ul class="list-group list-group-flush">
+            @foreach (var item in Model.Responsibilities.Skip(1))
+            {
+                <li class="list-group-item">@item</li>
+            }
+        </ul>
+        <div class="text-center mt-4">
+            <a href="@Model.CompanyDetailsUrl" target="_blank" class="btn btn-primary">
+                View Company Details
+            </a>
+        </div>
+    </div>
+</div>
