@@ -1,10 +1,64 @@
-﻿@page
+﻿﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Onur AKMESE - Portfolio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="hero-section text-center mb-5">
+        <div class="hero-photo mb-4">
+            <img src="~/images/me.jpg" alt="Onur AKMESE" class="rounded-circle" width="200" height="200">
+        </div>
+        <h1 class="display-4">Onur AKMESE</h1>
+        <h2 class="text-muted">.NET Developer</h2>
+        <p class="lead mt-3">Passionate about building robust and scalable web applications with .NET technologies</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h3 class="mb-4">Professional Experience</h3>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Developer C# .NET</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Hexvia - Apprenticeship</h6>
+                    <p class="card-text text-muted">November 2024 - Present</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Modified company software EPONA by integrating Datatable library</li>
+                        <li class="list-group-item">Implemented data storage in JSON format</li>
+                        <li class="list-group-item">Integrated High Charts library for statistics generation</li>
+                        <li class="list-group-item">Developed API with C# .NET Swagger and JWT authentication</li>
+                        <li class="list-group-item">Implemented OAuth 2.0 with Microsoft Azure integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Developer C# .NET</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Lambda Health System - Internship</h6>
+                    <p class="card-text text-muted">July 2024 - October 2024</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Developed HL7 FHIR API server</li>
+                        <li class="list-group-item">Created console application for patient data migration</li>
+                        <li class="list-group-item">Prototyped and implemented new software features</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Web Developer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Valloire-Habitat - Internship</h6>
+                    <p class="card-text text-muted">April 2022 - July 2022</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Migrated Windev web application to web-based version</li>
+                        <li class="list-group-item">Developed company web portal with Bootstrap</li>
+                        <li class="list-group-item">Implemented SSO authentication</li>
+                        <li class="list-group-item">Performed unit testing and security enhancements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
