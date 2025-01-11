@@ -7,6 +7,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddScoped<ExperienceService>();
 builder.Services.AddScoped<EntrepreneurshipService>();
 builder.Services.AddScoped<EducationService>();
+builder.Services.AddScoped<SkillsService>();
+builder.Services.AddScoped<ProjectService>();
 
 var app = builder.Build();
 

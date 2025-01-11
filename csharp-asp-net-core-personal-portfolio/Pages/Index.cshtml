@@ -4,33 +4,61 @@
     ViewData["Title"] = "Onur AKMESE - Portfolio";
 }
 
-<div class="container">
-    <div class="hero-section text-center mb-5">
-        <div class="hero-photo mb-4">
-            <img src="~/images/me.jpg" alt="Onur AKMESE" class="rounded-circle" width="200" height="200">
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 bg-light py-4 sticky-top" style="height: 100vh;">
+            <div class="text-center mb-4">
+                <img src="~/images/me.jpg" alt="Onur AKMESE" class="rounded-circle mb-3" width="150" height="150">
+                <h2>Onur AKMESE</h2>
+                <h4 class="text-muted">.NET Developer</h4>
+                <p class="mt-3">Passionate about building robust and scalable web applications with .NET technologies</p>
+            </div>
+            <hr>
+            <nav class="nav flex-column">
+                <a class="nav-link" href="#experience">Professional Experience</a>
+                <a class="nav-link" href="#entrepreneurship">Entrepreneurship</a>
+                <a class="nav-link" href="#education">Education</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#projects">Personal Projects</a>
+            </nav>
         </div>
-        <h1 class="display-4">Onur AKMESE</h1>
-        <h2 class="text-muted">.NET Developer</h2>
-        <p class="lead mt-3">Passionate about building robust and scalable web applications with .NET technologies</p>
-    </div>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <h3 class="mb-4">Professional Experience</h3>
-            
-            @foreach (var experience in Model.Experiences)
-            {
-                <partial name="_ExperienceCard" model="experience" />
-            }
+        <!-- Main Content -->
+        <div class="col-lg-9 py-4">
+            <section id="experience" class="mb-5">
+                <h3 class="mb-4 border-bottom pb-2">Professional Experience</h3>
+                @foreach (var experience in Model.Experiences)
+                {
+                    <partial name="_ExperienceCard" model="experience" />
+                }
+            </section>
 
-            <h3 class="mb-4 mt-5">Entrepreneurship</h3>
-            <partial name="_EntrepreneurshipCard" model="Model.Entrepreneurship" />
+            <section id="entrepreneurship" class="mb-5">
+                <h3 class="mb-4 border-bottom pb-2">Entrepreneurship</h3>
+                <partial name="_EntrepreneurshipCard" model="Model.Entrepreneurship" />
+            </section>
 
-            <h3 class="mb-4 mt-5">Education</h3>
-            @foreach (var education in Model.Educations)
-            {
-                <partial name="_EducationCard" model="education" />
-            }
+            <section id="education" class="mb-5">
+                <h3 class="mb-4 border-bottom pb-2">Education</h3>
+                @foreach (var education in Model.Educations)
+                {
+                    <partial name="_EducationCard" model="education" />
+                }
+            </section>
+
+            <section id="skills" class="mb-5">
+                <h3 class="mb-4 border-bottom pb-2">Skills</h3>
+                <partial name="_SkillsCard" model="Model.Skills" />
+            </section>
+
+            <section id="projects" class="mb-5">
+                <h3 class="mb-4 border-bottom pb-2">Personal Projects</h3>
+                @foreach (var project in Model.Projects)
+                {
+                    <partial name="_ProjectCard" model="project" />
+                }
+            </section>
         </div>
     </div>
 </div>

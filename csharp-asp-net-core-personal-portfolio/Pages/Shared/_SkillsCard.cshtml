@@ -1,0 +1,21 @@
+@model Skills
+
+<div class="card mb-4 skills-card">
+    <div class="card-body">
+        <h5 class="card-title mb-4">Technical Skills</h5>
+        <div class="mb-4">
+            @foreach (var skill in Model.TechnicalSkills)
+            {
+                <span class="badge bg-primary me-2 mb-2 p-2">@skill</span>
+            }
+        </div>
+
+        <h5 class="card-title mb-4">Soft Skills</h5>
+        <div>
+            @foreach (var skill in Model.SoftSkills)
+            {
+                <span class="badge bg-secondary me-2 mb-2 p-2">@skill</span>
+            }
+        </div>
+    </div>
+</div>

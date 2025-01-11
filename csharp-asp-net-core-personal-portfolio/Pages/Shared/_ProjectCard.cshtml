@@ -1,0 +1,22 @@
+@model Project
+
+<div class="card mb-4 project-card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+            <h5 class="card-title">@Model.Title</h5>
+            @if (Model.Links.Any())
+            {
+                <a href="@Model.Links.First().Url" target="_blank" class="text-muted project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            }
+        </div>
+        <p class="card-text">@Model.Description</p>
+        <div class="mt-3">
+            @foreach (var tech in Model.Technologies)
+            {
+                <span class="badge bg-info me-2 mb-2">@tech</span>
+            }
+        </div>
+    </div>
+</div>
