@@ -7,27 +7,30 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Sidebar -->
-        <div class="col-lg-3 bg-light py-4 sticky-top" style="height: 100vh;">
-            <div class="text-center mb-4">
-                <img src="~/images/me.jpg" alt="Onur AKMESE" class="rounded-circle mb-3" width="150" height="150">
-                <h2>Onur AKMESE</h2>
-                <h4 class="text-muted">.NET Developer</h4>
-                <p class="mt-3">Passionate about building robust and scalable web applications with .NET technologies</p>
+        <div class="col-lg-3 bg-light py-4 sticky-top sidebar" style="min-height: 100vh;">
+            <div class="text-center mb-4 profile-section">
+                <img src="~/images/me.jpg" alt="Onur AKMESE" class="rounded-circle mb-3 profile-image" width="150" height="150">
+                <h2 class="profile-name">Onur AKMESE</h2>
+                <h4 class="text-primary">.NET Developer</h4>
+                <p class="mt-3 text-muted">Passionate about building robust and scalable web applications with .NET technologies</p>
             </div>
-            <hr>
-            <nav class="nav flex-column">
+            <hr class="nav-divider">
+            <nav class="nav flex-column sidebar-nav">
                 <a class="nav-link" href="#experience">Professional Experience</a>
                 <a class="nav-link" href="#entrepreneurship">Entrepreneurship</a>
                 <a class="nav-link" href="#education">Education</a>
                 <a class="nav-link" href="#skills">Skills</a>
                 <a class="nav-link" href="#projects">Personal Projects</a>
+                <a class="nav-link" href="#github-projects">
+                    <i class="fab fa-github me-1"></i>GitHub Projects
+                </a>
             </nav>
         </div>
 
         <!-- Main Content -->
-        <div class="col-lg-9 py-4">
+        <div class="col-lg-9 py-4 main-content">
             <section id="experience" class="mb-5">
-                <h3 class="mb-4 border-bottom pb-2">Professional Experience</h3>
+                <h3 class="section-title mb-4">Professional Experience</h3>
                 @foreach (var experience in Model.Experiences)
                 {
                     <partial name="_ExperienceCard" model="experience" />
@@ -35,12 +38,12 @@
             </section>
 
             <section id="entrepreneurship" class="mb-5">
-                <h3 class="mb-4 border-bottom pb-2">Entrepreneurship</h3>
+                <h3 class="section-title mb-4">Entrepreneurship</h3>
                 <partial name="_EntrepreneurshipCard" model="Model.Entrepreneurship" />
             </section>
 
             <section id="education" class="mb-5">
-                <h3 class="mb-4 border-bottom pb-2">Education</h3>
+                <h3 class="section-title mb-4">Education</h3>
                 @foreach (var education in Model.Educations)
                 {
                     <partial name="_EducationCard" model="education" />
@@ -48,16 +51,44 @@
             </section>
 
             <section id="skills" class="mb-5">
-                <h3 class="mb-4 border-bottom pb-2">Skills</h3>
+                <h3 class="section-title mb-4">Skills</h3>
                 <partial name="_SkillsCard" model="Model.Skills" />
             </section>
 
             <section id="projects" class="mb-5">
-                <h3 class="mb-4 border-bottom pb-2">Personal Projects</h3>
+                <h3 class="section-title mb-4">Personal Projects</h3>
                 @foreach (var project in Model.Projects)
                 {
                     <partial name="_ProjectCard" model="project" />
                 }
+            </section>
+
+            <section id="github-projects" class="mb-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="section-title mb-0">
+                        <i class="fab fa-github me-2"></i>GitHub Projects
+                    </h3>
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-primary filter-btn" data-filter="all">All</button>
+                        <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="csharp">C#</button>
+                        <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="react">React</button>
+                        <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="others">Others</button>
+                    </div>
+                </div>
+
+                <div id="github-projects-container">
+                    @foreach (var project in Model.GitHubProjects)
+                    {
+                        <partial name="_GitHubProjectCard" model="project" />
+                    }
+                </div>
+
+                <div id="see-more-btn" class="text-center mt-4">
+                    <button class="btn btn-outline-primary" onclick="toggleProjects(this)">
+                        See More
+                        <i class="fas fa-chevron-down ms-1"></i>
+                    </button>
+                </div>
             </section>
         </div>
     </div>

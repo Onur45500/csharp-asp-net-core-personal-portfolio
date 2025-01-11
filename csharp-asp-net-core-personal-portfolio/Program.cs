@@ -9,6 +9,7 @@ builder.Services.AddScoped<EntrepreneurshipService>();
 builder.Services.AddScoped<EducationService>();
 builder.Services.AddScoped<SkillsService>();
 builder.Services.AddScoped<ProjectService>();
+builder.Services.AddScoped<GitHubService>();
 
 var app = builder.Build();
 

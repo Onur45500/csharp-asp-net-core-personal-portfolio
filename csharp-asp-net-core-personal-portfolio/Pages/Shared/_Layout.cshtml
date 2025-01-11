@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,52 +15,59 @@
           referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Onur AKMESE</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand fw-bold" asp-page="/Index">
+                    <i class="fas fa-code me-2"></i>Onur AKMESE
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link px-3" href="#experience">Experience</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#experience">Experience</a>
+                            <a class="nav-link px-3" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Contact</a>
+                            <a class="nav-link px-3" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#github-projects">
+                                <i class="fab fa-github me-1"></i>GitHub
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="main-wrapper pt-5">
+        @RenderBody()
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer bg-light shadow-lg">
         <div class="container py-4">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    &copy; 2025 - Onur AKMESE
+                    <p class="mb-0">&copy; @DateTime.Now.Year - Onur AKMESE</p>
+                    <p class="text-muted small mb-0">Full Stack .NET Developer</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="mailto:onur.akmese@hotmail.com" class="text-decoration-none me-3">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/onur-akmese-48615219a/" target="_blank" class="text-decoration-none me-3">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/Onur45500" target="_blank" class="text-decoration-none">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <div class="social-links">
+                        <a href="mailto:onur.akmese@hotmail.com" class="btn btn-link text-dark" title="Email">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/onur-akmese-48615219a/" target="_blank" class="btn btn-link text-dark" title="LinkedIn">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="https://github.com/Onur45500" target="_blank" class="btn btn-link text-dark" title="GitHub">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
