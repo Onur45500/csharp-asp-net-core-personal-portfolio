@@ -11,6 +11,8 @@ builder.Services.AddScoped<SkillsService>();
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<GitHubService>();
 
+builder.WebHost.UseUrls("http://0.0.0.0:5293");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
