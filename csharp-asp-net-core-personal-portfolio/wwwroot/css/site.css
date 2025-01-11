@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   background-color: #f8f9fa;
 }
 
@@ -69,4 +69,24 @@ body {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, 
 .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.education-card {
+  background-color: #f8f9fa;
+  border-left: 4px solid #258cfb;
+}
+
+.education-card .card-title {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.education-card .card-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-card .card-text {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }

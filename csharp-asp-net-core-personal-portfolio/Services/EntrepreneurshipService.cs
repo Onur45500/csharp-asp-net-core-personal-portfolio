@@ -24,27 +24,5 @@ namespace csharp_asp_net_core_personal_portfolio.Services
                 IsEntrepreneurship = true
             };
         }
-
-        public List<Experience> GetServices()
-        {
-            return new List<Experience>
-            {
-                new Experience
-                {
-                    Title = "Services Offered",
-                    Company = "AKMESE",
-                    Type = "Services",
-                    Duration = "Since September 2021",
-                    Responsibilities = new List<string>
-                    {
-                        "Custom Web Application Development",
-                        "API Development and Integration",
-                        "Cloud Solutions Implementation",
-                        "Business Process Automation",
-                        "Technical Consulting"
-                    }
-                }
-            };
-        }
     }
 }

@@ -1,9 +1,12 @@
+using csharp_asp_net_core_personal_portfolio.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<csharp_asp_net_core_personal_portfolio.Services.ExperienceService>();
-builder.Services.AddScoped<csharp_asp_net_core_personal_portfolio.Services.EntrepreneurshipService>();
+builder.Services.AddScoped<ExperienceService>();
+builder.Services.AddScoped<EntrepreneurshipService>();
+builder.Services.AddScoped<EducationService>();
 
 var app = builder.Build();
 

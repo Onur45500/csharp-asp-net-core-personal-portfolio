@@ -26,11 +26,10 @@
             <h3 class="mb-4 mt-5">Entrepreneurship</h3>
             <partial name="_EntrepreneurshipCard" model="Model.Entrepreneurship" />
 
-            <h3 class="mb-4 mt-5">Services Offered</h3>
-            
-            @foreach (var service in Model.Services)
+            <h3 class="mb-4 mt-5">Education</h3>
+            @foreach (var education in Model.Educations)
             {
-                <partial name="_ExperienceCard" model="service" />
+                <partial name="_EducationCard" model="education" />
             }
         </div>
     </div>

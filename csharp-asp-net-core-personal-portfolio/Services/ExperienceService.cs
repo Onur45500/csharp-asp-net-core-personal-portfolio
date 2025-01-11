@@ -53,22 +53,6 @@ namespace csharp_asp_net_core_personal_portfolio.Services
                 },
                 new Experience
                 {
-                    Title = "AKMESE",
-                    Company = "Entrepreneurship",
-                    Type = "Micro-company",
-                    Duration = "Since September 2021",
-                    Responsibilities = new List<string>
-                    {
-                        "Founded and managing a micro-company specialized in creating modern, responsive websites and web applications for businesses.",
-                        "Web Development",
-                        "Consulting",
-                        "Business Solutions"
-                    },
-                    CompanyDetailsUrl = "https://www.societe.com/societe/akmese-902780014.html",
-                    IsEntrepreneurship = true
-                },
-                new Experience
-                {
                     Title = "Services Offered",
                     Company = "AKMESE",
                     Type = "Services",
