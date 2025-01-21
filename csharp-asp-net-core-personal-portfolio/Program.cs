@@ -9,7 +9,7 @@ builder.Services.AddScoped<EntrepreneurshipService>();
 builder.Services.AddScoped<EducationService>();
 builder.Services.AddScoped<SkillsService>();
 builder.Services.AddScoped<ProjectService>();
-builder.Services.AddScoped<GitHubService>();
+//builder.Services.AddScoped<GitHubService>();
 
 // Ensure the application listens to appropriate URLs and ports
 // Note: Don't force HTTPS here if Apache is handling SSL termination

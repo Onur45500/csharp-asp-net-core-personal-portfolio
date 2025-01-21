@@ -13,7 +13,7 @@ namespace csharp_asp_net_core_personal_portfolio.Pages
         private readonly EducationService _educationService;
         private readonly SkillsService _skillsService;
         private readonly ProjectService _projectService;
-        private readonly GitHubService _githubService;
+        //private readonly GitHubService _githubService;
 
         public required List<Experience> Experiences { get; set; }
         public required Experience Entrepreneurship { get; set; }
@@ -27,15 +27,16 @@ namespace csharp_asp_net_core_personal_portfolio.Pages
             EntrepreneurshipService entrepreneurshipService,
             EducationService educationService,
             SkillsService skillsService,
-            ProjectService projectService,
-            GitHubService githubService)
+            ProjectService projectService
+            //GitHubService githubService
+        )
         {
             _experienceService = experienceService;
             _entrepreneurshipService = entrepreneurshipService;
             _educationService = educationService;
             _skillsService = skillsService;
             _projectService = projectService;
-            _githubService = githubService;
+            //_githubService = githubService;
         }
 
         public async Task OnGetAsync()
@@ -45,7 +46,7 @@ namespace csharp_asp_net_core_personal_portfolio.Pages
             Educations = _educationService.GetEducations();
             Skills = _skillsService.GetSkills();
             Projects = _projectService.GetProjects();
-            GitHubProjects = await _githubService.GetPublicRepositoriesAsync();
+            //GitHubProjects = await _githubService.GetPublicRepositoriesAsync();
         }
     }
 }
