@@ -76,19 +76,29 @@
                     </div>
                 </div>
 
-                <div id="github-projects-container">
-                    @foreach (var project in Model.GitHubProjects)
-                    {
-                        <partial name="_GitHubProjectCard" model="project" />
-                    }
-                </div>
+                @if (Model.GitHubProjects.Any())
+                {
+                    <div id="github-projects-container">
+                        @foreach (var project in Model.GitHubProjects)
+                        {
+                            <partial name="_GitHubProjectCard" model="project" />
+                        }
+                    </div>
 
-                <div id="see-more-btn" class="text-center mt-4">
-                    <button class="btn btn-outline-primary" onclick="toggleProjects(this)">
-                        See More
-                        <i class="fas fa-chevron-down ms-1"></i>
-                    </button>
-                </div>
+                    <div id="see-more-btn" class="text-center mt-4">
+                        <button class="btn btn-outline-primary" onclick="toggleProjects(this)">
+                            See More
+                            <i class="fas fa-chevron-down ms-1"></i>
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        GitHub projects are currently unavailable. Please try again later.
+                    </div>
+                }
             </section>
         </div>
     </div>
