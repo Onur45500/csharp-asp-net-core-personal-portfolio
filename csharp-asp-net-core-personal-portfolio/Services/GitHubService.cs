@@ -83,9 +83,80 @@ namespace csharp_asp_net_core_personal_portfolio.Services
                     }
                 };
             }
+            catch (ApiException ex) when (ex.StatusCode == System.Net.HttpStatusCode.GatewayTimeout || 
+                                        ex.StatusCode == System.Net.HttpStatusCode.RequestTimeout)
+            {
+                Console.WriteLine($"GitHub API connection timeout: {ex.Message}");
+                Console.WriteLine($"Status Code: {ex.StatusCode}");
+                Console.WriteLine($"Response Headers: {ex.HttpResponse.Headers}");
+                Console.WriteLine($"Response Content: {ex.HttpResponse.Body}");
+                return new List<GitHubProject>
+                {
+                    new GitHubProject
+                    {
+                        Name = "Connection Error",
+                        Description = "Unable to connect to GitHub. Please check your internet connection and try again.",
+                        HtmlUrl = string.Empty,
+                        Language = string.Empty,
+                        StargazersCount = 0,
+                        ForksCount = 0,
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow
+                    }
+                };
+            }
+            catch (HttpRequestException ex)
+            {
+                Console.WriteLine($"Network connection error: {ex.Message}");
+                Console.WriteLine($"If this persists, please check:");
+                Console.WriteLine($"1. Your internet connection");
+                Console.WriteLine($"2. GitHub API status (https://www.githubstatus.com)");
+                Console.WriteLine($"3. Firewall/DNS settings");
+                return new List<GitHubProject>
+                {
+                    new GitHubProject
+                    {
+                        Name = "Network Error",
+                        Description = "Unable to connect to GitHub. Please check your network connection.",
+                        HtmlUrl = string.Empty,
+                        Language = string.Empty,
+                        StargazersCount = 0,
+                        ForksCount = 0,
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow
+                    }
+                };
+            }
+            catch (TaskCanceledException ex) when (ex.CancellationToken.IsCancellationRequested == false)
+            {
+                Console.WriteLine($"Request timeout: {ex.Message}");
+                return new List<GitHubProject>
+                {
+                    new GitHubProject
+                    {
+                        Name = "Timeout Error",
+                        Description = "Connection to GitHub timed out. Please try again later.",
+                        HtmlUrl = string.Empty,
+                        Language = string.Empty,
+                        StargazersCount = 0,
+                        ForksCount = 0,
+                        CreatedAt = DateTime.UtcNow,
+                        UpdatedAt = DateTime.UtcNow
+                    }
+                };
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"GitHub API error: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                Console.WriteLine($"If this persists, please check:");
+                Console.WriteLine($"1. Your internet connection");
+                Console.WriteLine($"2. GitHub API status (https://www.githubstatus.com)");
+                Console.WriteLine($"3. Firewall/DNS settings");
                 return new List<GitHubProject>
                 {
                     new GitHubProject
