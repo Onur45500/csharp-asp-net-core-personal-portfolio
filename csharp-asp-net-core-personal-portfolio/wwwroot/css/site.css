@@ -311,6 +311,24 @@ body {
     .section-title {
         font-size: 1.5rem;
     }
+
+    /* Mobile footer links in navigation */
+    .navbar-nav .d-lg-none {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-nav .d-lg-none .nav-link {
+        padding-left: 1rem !important;
+        color: var(--text-muted);
+    }
+    
+    .navbar-nav .d-lg-none .nav-link:hover {
+        color: var(--primary-color);
+    }
+    
+    .navbar-nav .d-lg-none.mt-2 {
+        margin-top: 1rem !important;
+    }
 }
 
 @media (max-width: 575.98px) {
