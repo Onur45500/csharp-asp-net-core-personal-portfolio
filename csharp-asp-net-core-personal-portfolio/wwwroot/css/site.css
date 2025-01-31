@@ -207,6 +207,17 @@ body {
         position: relative !important;
         height: auto !important;
         margin-bottom: 2rem;
+        min-height: auto !important;
+        padding: 1rem 0;
+    }
+
+    .profile-section {
+        padding: 0.5rem;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
     }
 
     .main-content {
