@@ -17,11 +17,7 @@ namespace csharp_asp_net_core_personal_portfolio.Services
                     Duration = "November 2024 - Present",
                     Responsibilities = new List<string>
                     {
-                        "Modified company software EPONA by integrating Datatable library",
-                        "Implemented data storage in JSON format",
-                        "Integrated High Charts library for statistics generation",
-                        "Developed API with C# .NET Swagger and JWT authentication",
-                        "Implemented OAuth 2.0 with Microsoft Azure integration"
+                        
                     }
                 },
                 new Experience
@@ -39,6 +35,21 @@ namespace csharp_asp_net_core_personal_portfolio.Services
                 },
                 new Experience
                 {
+                    Title = "Developer C# .NET",
+                    Company = "Hexvia",
+                    Type = "Apprenticeship",
+                    Duration = "September 2022 - July 2024",
+                    Responsibilities = new List<string>
+                    {
+                        "Modified company software EPONA by integrating Datatable library",
+                        "Implemented data storage in JSON format",
+                        "Integrated High Charts library for statistics generation",
+                        "Developed API with C# .NET Swagger and JWT authentication",
+                        "Implemented OAuth 2.0 with Microsoft Azure integration"
+                    }
+                },
+                new Experience
+                {
                     Title = "Web Developer",
                     Company = "Valloire-Habitat",
                     Type = "Internship",
@@ -49,21 +60,6 @@ namespace csharp_asp_net_core_personal_portfolio.Services
                         "Developed company web portal with Bootstrap",
                         "Implemented SSO authentication",
                         "Performed unit testing and security enhancements"
-                    }
-                },
-                new Experience
-                {
-                    Title = "Services Offered",
-                    Company = "AKMESE",
-                    Type = "Services",
-                    Duration = "Since September 2021",
-                    Responsibilities = new List<string>
-                    {
-                        "Custom Web Application Development",
-                        "API Development and Integration",
-                        "Cloud Solutions Implementation",
-                        "Business Process Automation",
-                        "Technical Consulting"
                     }
                 }
             };
