@@ -1,4 +1,4 @@
-﻿// GitHub Projects Filtering and Expansion
+﻿﻿// GitHub Projects Filtering and Expansion
 let allProjects = [];
 let currentFilter = 'all';
 let isExpanded = false;
@@ -45,6 +45,49 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (navbarCollapse.classList.contains('show')) {
                 document.querySelector('.navbar-toggler').click();
+            }
+        });
+    });
+
+    // Scroll Progress Indicator
+    const progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+    }
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
+            localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
+        });
+
+        // Initialize theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Enhanced Navigation Active State
+    const navItems = document.querySelectorAll('.navbar-nav .nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const underline = item.querySelector('.nav-link-underline');
+            if (underline) {
+                underline.style.width = '100%';
+            }
+        });
+        item.addEventListener('mouseleave', () => {
+            const underline = item.querySelector('.nav-link-underline');
+            if (underline) {
+                underline.style.width = '0';
             }
         });
     });
