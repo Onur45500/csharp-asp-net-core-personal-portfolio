@@ -1,10 +1,47 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - csharp_asp_net_core_personal_portfolio</title>
-    <script type="importmap"></script>
+    <meta name="description" content="Onur AKMESE - Full Stack .NET Developer portfolio showcasing experience, projects, skills, and education." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://onur-akmese.com" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://onur-akmese.com" />
+    <meta property="og:title" content="Onur AKMESE - Full Stack .NET Developer" />
+    <meta property="og:description" content="Professional portfolio showcasing experience, projects, skills, and education." />
+    <meta property="og:image" content="https://onur-akmese.com/images/me.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://onur-akmese.com" />
+    <meta property="twitter:title" content="Onur AKMESE - Full Stack .NET Developer" />
+    <meta property="twitter:description" content="Professional portfolio showcasing experience, projects, skills, and education." />
+    <meta property="twitter:image" content="https://onur-akmese.com/images/me.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "Person",
+      "name": "Onur AKMESE",
+      "jobTitle": "Full Stack .NET Developer",
+      "url": "https://onur-akmese.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/onur-akmese-48615219a/",
+        "https://github.com/Onur45500"
+      ],
+      "image": "https://onur-akmese.com/images/me.jpg",
+      "description": "Professional portfolio showcasing experience, projects, skills, and education."
+    }
+    </script>
+    <title>@ViewData["Title"] - Onur AKMESE | Full Stack .NET Developer</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -18,8 +55,8 @@
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand fw-bold" asp-page="/Index">
-                    <i class="fas fa-code me-2"></i>Onur AKMESE
+                <a class="navbar-brand fw-bold" asp-page="/Index" aria-label="Home">
+                    <i class="fas fa-code me-2" aria-hidden="true"></i>Onur AKMESE
                 </a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -94,15 +131,15 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="social-links">
-                        <a href="mailto:onur.akmese@hotmail.com" class="btn btn-link text-dark hover-scale" title="Email">
-                            <i class="fas fa-envelope fa-lg"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/onur-akmese-48615219a/" target="_blank" class="btn btn-link text-dark hover-scale" title="LinkedIn">
-                            <i class="fab fa-linkedin fa-lg"></i>
-                        </a>
-                        <a href="https://github.com/Onur45500" target="_blank" class="btn btn-link text-dark hover-scale" title="GitHub">
-                            <i class="fab fa-github fa-lg"></i>
-                        </a>
+                    <a href="mailto:onur.akmese@hotmail.com" class="btn btn-link text-dark hover-scale" title="Email" aria-label="Email">
+                        <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/onur-akmese-48615219a/" target="_blank" class="btn btn-link text-dark hover-scale" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Onur45500" target="_blank" class="btn btn-link text-dark hover-scale" title="GitHub" aria-label="GitHub">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
                     </div>
                 </div>
             </div>
